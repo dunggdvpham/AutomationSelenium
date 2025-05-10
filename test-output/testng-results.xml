@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-05T22:14:48 GMT+07:00" name="Default suite" finished-at="2025-05-05T22:15:44 GMT+07:00" duration-ms="56790">
+  <suite started-at="2025-05-10T20:27:21 GMT+07:00" name="Default suite" finished-at="2025-05-10T20:27:28 GMT+07:00" duration-ms="6954">
     <groups>
     </groups>
-    <test started-at="2025-05-05T22:14:48 GMT+07:00" name="Default test" finished-at="2025-05-05T22:15:44 GMT+07:00" duration-ms="56790">
-      <class name="automation.testsuite.EmployManagement">
-        <test-method signature="employManagement()[pri:0, instance:automation.testsuite.EmployManagement@77c2494c]" started-at="2025-05-05T22:14:48 GMT+07:00" name="employManagement" finished-at="2025-05-05T22:15:44 GMT+07:00" duration-ms="56756" status="PASS">
+    <test started-at="2025-05-10T20:27:21 GMT+07:00" name="Default test" finished-at="2025-05-10T20:27:28 GMT+07:00" duration-ms="6954">
+      <class name="automation.testsuite.Day8_BTVN_2">
+        <test-method signature="locateElement()[pri:0, instance:automation.testsuite.Day8_BTVN_2@4c12331b]" started-at="2025-05-10T20:27:21 GMT+07:00" name="locateElement" finished-at="2025-05-10T20:27:28 GMT+07:00" duration-ms="6909" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- employManagement -->
-      </class> <!-- automation.testsuite.EmployManagement -->
+        </test-method> <!-- locateElement -->
+      </class> <!-- automation.testsuite.Day8_BTVN_2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

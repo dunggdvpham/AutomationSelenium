@@ -167,11 +167,6 @@
     
 	</dependency>
 	<dependency>
-    	<groupId>io.github.bonigarcia</groupId>
-    	<artifactId>webdrivermanager</artifactId>
-    	<version>5.8.0</version> <!-- hoặc version mới hơn nếu có -->
-	</dependency>
-	<dependency>
     	<groupId>org.apache.poi</groupId>
     	<artifactId>poi-scratchpad</artifactId>
     	<version>5.4.0</version>
