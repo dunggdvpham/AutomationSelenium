@@ -1,6 +1,7 @@
 package automation.testsuite;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import automation.common.CommonBase;
@@ -17,7 +18,9 @@ public class Day12_HomeWork extends CommonBase{
 	@Test
 	public void SelectCountry() {
 		GlobalsqaPage homepage = new GlobalsqaPage(driver);
-		homepage.SelectCountry("ARG");
+		homepage.SelectCountry("ARG")
+				.VerifySelectedValueDisplayInCountryDropdown("Argentina");
+		
 	}
 	
 	@AfterMethod

@@ -1,5 +1,7 @@
 package automation.common;
 
+import static org.testng.Assert.assertEquals;
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -36,6 +38,10 @@ public class CommonBase {
 	public void selectOptionFromDropdownByValue(String locator, String type, String value) {
 		Select select = new Select(getElementVisibility(locator, type));
 		select.selectByValue(value);
+	}
+	public void VerifySelectedDisplayInDropdown(String locator, String type, String expectedResult) {
+		Select select = new Select(getElementVisibility(locator, type));
+		assertEquals(select.getFirstSelectedOption().getText(), expectedResult);
 	}
 	public By getBy(String locator, String type) {
 		switch (type.trim().toLowerCase()) {
