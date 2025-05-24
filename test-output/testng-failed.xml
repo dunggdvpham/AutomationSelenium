@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.Day8_BTVN_2">
+      <class name="automation.testsuite.Day12_HomeWork">
         <methods>
-          <include name="locateElement"/>
+          <include name="SelectCountry"/>
+          <include name="openBrowser"/>
+          <include name="quitBrowser"/>
         </methods>
-      </class> <!-- automation.testsuite.Day8_BTVN_2 -->
+      </class> <!-- automation.testsuite.Day12_HomeWork -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
