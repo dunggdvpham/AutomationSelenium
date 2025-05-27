@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
 
-import automation.common.CommonBase;
+import automation.common.BaseCommand;
 
-public class Day12_DropDownList extends CommonBase{
+public class Day12_DropDownList extends BaseCommand{
 	@Test
 	public void SelectOptionInDropdownList() {
 		driver = initChromeDriver("https://codestar.vn/khoa-hoc/");

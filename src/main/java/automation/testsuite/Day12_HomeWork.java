@@ -4,12 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import automation.common.CommonBase;
+import automation.common.BaseCommand;
 import automation.constants.CT_PageURL;
 import automation.pageLocators.GlobalsqaPage;
 
-public class Day12_HomeWork extends CommonBase{
-	public WebDriver driver;
+public class Day12_HomeWork extends BaseCommand{
+
 	@BeforeMethod
 	public void openBrowser() {
 		driver = initChromeDriver(CT_PageURL.GLOBALSQA_URL);

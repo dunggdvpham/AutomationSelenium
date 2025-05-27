@@ -5,9 +5,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
-import automation.common.CommonBase;
+import automation.common.BaseCommand;
 
-public class Day8_Test extends CommonBase{
+public class Day8_Test extends BaseCommand{
 	public WebDriver driver;
 	String url = "https://alada.vn/tai-khoan/dang-nhap.html";
 	@Test

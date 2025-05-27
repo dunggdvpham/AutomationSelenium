@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import automation.common.CommonBase;
+import automation.common.BaseCommand;
 
-public class Day8_BTVN_1 extends CommonBase{
+public class Day8_BTVN_1 extends BaseCommand{
 	public WebDriver driver;
 	public String url = "https://selectorshub.com/xpath-practice-page/";
 	@Test

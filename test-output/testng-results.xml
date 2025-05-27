@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-24T22:42:29 GMT+07:00" name="Default suite" finished-at="2025-05-24T22:42:38 GMT+07:00" duration-ms="8721">
+  <suite started-at="2025-05-27T22:46:12 GMT+07:00" name="Default suite" finished-at="2025-05-27T22:47:59 GMT+07:00" duration-ms="107657">
     <groups>
     </groups>
-    <test started-at="2025-05-24T22:42:29 GMT+07:00" name="Default test" finished-at="2025-05-24T22:42:38 GMT+07:00" duration-ms="8721">
-      <class name="automation.testsuite.Day12_HomeWork">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:automation.testsuite.Day12_HomeWork@3eb738bb]" started-at="2025-05-24T22:42:29 GMT+07:00" name="openBrowser" finished-at="2025-05-24T22:42:34 GMT+07:00" duration-ms="5194" status="PASS">
+    <test started-at="2025-05-27T22:46:12 GMT+07:00" name="Default test" finished-at="2025-05-27T22:47:59 GMT+07:00" duration-ms="107657">
+      <class name="automation.testsuite.Day13_BTVN_1">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:automation.testsuite.Day13_BTVN_1@3cd3e762]" started-at="2025-05-27T22:46:12 GMT+07:00" name="openBrowser" finished-at="2025-05-27T22:46:34 GMT+07:00" duration-ms="22035" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="SelectCountry()[pri:0, instance:automation.testsuite.Day12_HomeWork@3eb738bb]" started-at="2025-05-24T22:42:34 GMT+07:00" name="SelectCountry" finished-at="2025-05-24T22:42:37 GMT+07:00" duration-ms="3352" status="PASS">
+        <test-method signature="updatePassSuccessfully()[pri:0, instance:automation.testsuite.Day13_BTVN_1@3cd3e762]" started-at="2025-05-27T22:46:34 GMT+07:00" name="updatePassSuccessfully" finished-at="2025-05-27T22:47:59 GMT+07:00" duration-ms="85428" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SelectCountry -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:automation.testsuite.Day12_HomeWork@3eb738bb]" started-at="2025-05-24T22:42:37 GMT+07:00" name="quitBrowser" finished-at="2025-05-24T22:42:38 GMT+07:00" duration-ms="142" status="PASS">
+        </test-method> <!-- updatePassSuccessfully -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:automation.testsuite.Day13_BTVN_1@3cd3e762]" started-at="2025-05-27T22:47:59 GMT+07:00" name="quitBrowser" finished-at="2025-05-27T22:47:59 GMT+07:00" duration-ms="155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
-      </class> <!-- automation.testsuite.Day12_HomeWork -->
+      </class> <!-- automation.testsuite.Day13_BTVN_1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

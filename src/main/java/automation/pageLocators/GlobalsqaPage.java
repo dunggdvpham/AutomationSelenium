@@ -2,11 +2,11 @@ package automation.pageLocators;
 
 import org.openqa.selenium.WebDriver;
 
-import automation.common.CommonBase;
+import automation.common.BaseCommand;
 import automation.common.Type;
 import automation.constants.CT_GlobalsqaHomeScreen;
 
-public class GlobalsqaPage extends CommonBase{
+public class GlobalsqaPage extends BaseCommand{
 	public WebDriver driver;
 	public GlobalsqaPage(WebDriver _driver) {
 		this.driver = _driver;

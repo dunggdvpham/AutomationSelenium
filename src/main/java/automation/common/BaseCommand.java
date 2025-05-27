@@ -1,9 +1,11 @@
 package automation.common;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CommonBase {
+public class BaseCommand {
 	public static WebDriver driver;
 	public int shortWait = 20;
 	public int longWait = 50;
@@ -64,6 +66,34 @@ public class CommonBase {
 		default:
             throw new IllegalArgumentException("Invalid locator type: " + type);
 	}
+	}
+	public void sendKeyToElemet(String locator, String type, String key) {
+		WebElement element = getElementVisibility(locator, type);
+		element.clear();
+		element.sendKeys(key);
+	}
+
+	public void clickOnElement(String locator, String type) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+		WebElement element = getElementVisibility(locator, type);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+	}
+	public void verifyElementIsDisplay(String locator, String type) {
+		WebElement element = getElementVisibility(locator, type);
+		assertTrue(element.isDisplayed());		
+	}
+	public Alert swithToAlert() {
+		Alert alert = driver.switchTo().alert();
+		return alert;
+	}
+	public void swithToDefaultWindown() {
+		driver.switchTo().defaultContent();
+	}
+	public void acceptAlert() {
+		Alert alert = swithToAlert();
+		alert.accept();
+		swithToDefaultWindown();
 	}
 	public void sleepInSecond(int waitTime) {
 		try {
