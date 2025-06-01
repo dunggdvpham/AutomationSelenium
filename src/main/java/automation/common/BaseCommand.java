@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,6 +24,14 @@ public class BaseCommand {
 	public WebDriver initChromeDriver(String url) {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
 		driver = new ChromeDriver();
+		driver.get(url);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		return driver;
+	}
+	public WebDriver initFirefoxDrier(String url) {
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\geckodriver.exe");
+		driver = new FirefoxDriver();
 		driver.get(url);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -44,6 +53,9 @@ public class BaseCommand {
 	public void VerifySelectedDisplayInDropdown(String locator, String type, String expectedResult) {
 		Select select = new Select(getElementVisibility(locator, type));
 		assertEquals(select.getFirstSelectedOption().getText(), expectedResult);
+	}
+	public void isElementDisplayed(String locator, String type) {
+		assertTrue(getElementVisibility(locator, type).isDisplayed());
 	}
 	public By getBy(String locator, String type) {
 		switch (type.trim().toLowerCase()) {

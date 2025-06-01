@@ -18,4 +18,5 @@ public class AladaLoginPage extends BaseCommand{
 		clickOnElement(CT_AladaLogin.BTN_LOGIN, Type.Xpath);
 		return this;
 	}
+	
 }
