@@ -95,6 +95,15 @@ public class BaseCommand {
 		alert.accept();
 		swithToDefaultWindown();
 	}
+	public void clickToCheckbox(String locator, String type) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+		WebElement element = getElementVisibility(locator, type);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		if(!element.isSelected()) {
+			element.click();
+		}
+		
+	}
 	public void sleepInSecond(int waitTime) {
 		try {
 			Thread.sleep(waitTime * 1000);
