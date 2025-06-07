@@ -17,7 +17,7 @@ public class GlobalsqaPage extends BaseCommand{
 		return this;
 	}
 	public GlobalsqaPage VerifySelectedValueDisplayInCountryDropdown(String expectedResult) {
-		VerifySelectedDisplayInDropdown(CT_GlobalsqaHomeScreen.ele_ddCountry, Type.TagName, expectedResult);
+		verifySelectedDisplayInDropdown(CT_GlobalsqaHomeScreen.ele_ddCountry, Type.TagName, expectedResult);
 		return this;
 	}
 }

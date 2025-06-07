@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -46,16 +47,42 @@ public class BaseCommand {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(getBy(locator, type)));
 		return driver.findElement(getBy(locator, type));
 	}
+	public WebElement getElementVisibility(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		return driver.findElement(locator);
+	}
+	public WebElement getElementPresentInDOM(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		return driver.findElement(locator);
+	}
+	public List<WebElement> getAllElementVisibility(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+		return driver.findElements(locator);
+	}
+	public void verifyAllElementTextContains(By locator, String key) {
+		List<WebElement> list = getAllElementVisibility(locator);
+		for (WebElement item : list) {
+			String text = item.getText();
+			System.out.println(text);
+			assertTrue(text.trim().toLowerCase().contains(key));
+		}
+	}
 	public void selectOptionFromDropdownByValue(String locator, String type, String value) {
 		Select select = new Select(getElementVisibility(locator, type));
 		select.selectByValue(value);
 	}
-	public void VerifySelectedDisplayInDropdown(String locator, String type, String expectedResult) {
+	public void verifySelectedDisplayInDropdown(String locator, String type, String expectedResult) {
 		Select select = new Select(getElementVisibility(locator, type));
 		assertEquals(select.getFirstSelectedOption().getText(), expectedResult);
 	}
 	public void isElementDisplayed(String locator, String type) {
 		assertTrue(getElementVisibility(locator, type).isDisplayed());
+	}
+	public void isElementDisplayed(By locator) {
+		assertTrue(getElementVisibility(locator).isDisplayed());
 	}
 	public By getBy(String locator, String type) {
 		switch (type.trim().toLowerCase()) {
@@ -84,11 +111,28 @@ public class BaseCommand {
 		element.clear();
 		element.sendKeys(key);
 	}
+	public void sendKeyToElemet(By locator, String key) {
+		WebElement element = getElementVisibility(locator);
+		element.clear();
+		element.sendKeys(key);
+	}
 
 	public void clickOnElement(String locator, String type) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
 		WebElement element = getElementVisibility(locator, type);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+	}
+	public void clickOnElement(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+		WebElement element = getElementVisibility(locator);
+		wait.until(ExpectedConditions.elementToBeClickable(locator));
+		element.click();
+	}
+	public void clickOnElementByJSExecutor(By locator) {
+		WebElement element = getElementPresentInDOM(locator);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
 		element.click();
 	}
 	public void verifyElementIsDisplay(String locator, String type) {

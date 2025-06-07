@@ -12,9 +12,9 @@ import automation.pageLocators.AladaUserProfilePage;
 
 public class Day14_BTVN extends BaseCommand{
 	private String fullname = "Pham Dung";
-	private String email = "dung.pham+3@sotatek.com";
-	private String pass = "123456";
-	private String changedPass = "123456";
+	private String email = "dung.pham+5@sotatek.com";
+	private String pass1 = "123456";
+	private String pass2 = "123456";
 	private String phone = "0123456789";
 
 	@BeforeMethod
@@ -30,15 +30,18 @@ public class Day14_BTVN extends BaseCommand{
 	public void signupNewAccountAndChangePassSucessfully() {
 		// step 1 sign up new account
 		AladaRegisterPage regis = new AladaRegisterPage(driver)
-				.SignUpNewAccount(fullname, email, pass, phone);
+				.SignUpNewAccount(fullname, email, pass1, phone);
 		AladaHomePage home = new AladaHomePage(driver)
 				.isHomePageIsDisplayed()
 				.clickUserProfile()
 				.clickOnChangeProfileLink();
 		// step 2: update pass
+		String temp;
+		temp = pass1;
 		AladaUserProfilePage userProfile = new AladaUserProfilePage(driver)
-				.updateNewPass(pass, changedPass);
-
+				.updateNewPass(pass1, pass2);
+		pass1 = pass2;
+		pass2 = temp;
 		AladaHomePage home2 = new AladaHomePage(driver)
 				.clickUserProfile()
 				.clickOnLogOut();
@@ -47,7 +50,7 @@ public class Day14_BTVN extends BaseCommand{
 		AladaOnBoardPage onboard = new AladaOnBoardPage(driver)
 				.accessSignInLink();
 		AladaLoginPage login2 = new AladaLoginPage(driver)
-				.loginFunction(email, changedPass);
+				.loginFunction(email, pass2);
 		AladaHomePage home3 = new AladaHomePage(driver)
 				.isHomePageIsDisplayed();
 	}
