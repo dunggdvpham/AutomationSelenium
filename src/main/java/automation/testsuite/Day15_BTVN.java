@@ -19,10 +19,10 @@ public class Day15_BTVN extends BaseCommand{
 		TeduLoginPage login = new TeduLoginPage(driver)
 				.LoginFunction(email, pass1);
 	}
-//	@AfterMethod
-//	public void quitBrowser() {
-//		driver.quit();
-//	}
+	@AfterMethod
+	public void quitBrowser() {
+		driver.quit();
+	}
 	@Test
 	(priority = 1)
 	public void updatePassUnsuccessfully() {
