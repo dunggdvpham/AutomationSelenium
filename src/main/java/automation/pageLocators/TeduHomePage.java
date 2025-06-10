@@ -15,6 +15,7 @@ public class TeduHomePage extends BaseCommand{
 	private By tf_Search = By.xpath("//input[@class = 'autosearch-input form-control']");
 	private By btn_Search = By.xpath("//button[@class = 'button-search btn btn-primary']");
 	private By title_Cource = By.xpath("//h3[@class= 'md']//a");
+	
 	public TeduHomePage(WebDriver _driver) {
 		this.driver = _driver;
 		PageFactory.initElements(driver, this);

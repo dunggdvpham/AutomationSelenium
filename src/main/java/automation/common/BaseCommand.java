@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -81,8 +82,8 @@ public class BaseCommand {
 	public void isElementDisplayed(String locator, String type) {
 		assertTrue(getElementVisibility(locator, type).isDisplayed());
 	}
-	public void isElementDisplayed(By locator) {
-		assertTrue(getElementVisibility(locator).isDisplayed());
+	public boolean isElementDisplayed(By locator) {
+		return getElementVisibility(locator).isDisplayed();
 	}
 	public By getBy(String locator, String type) {
 		switch (type.trim().toLowerCase()) {
@@ -159,6 +160,29 @@ public class BaseCommand {
 			element.click();
 		}
 		
+	}
+	public void switchToAlert() {
+		driver.switchTo().alert();
+	}
+	public void acceptToAlert() {
+		driver.switchTo().alert().accept();
+	}
+	public void switchToDefaultWindown() {
+		driver.switchTo().defaultContent();
+	}
+    public int getRandomNumber(int length) {
+        if (length <= 0 || length > 9) {
+            throw new IllegalArgumentException("Length must be between 1 and 9");
+        }
+
+        int min = (int)Math.pow(10, length - 1);
+        int max = (int)Math.pow(10, length) - 1;
+
+        return (int)(Math.random() * (max - min + 1)) + min;
+    }
+	public void selectOptionFromDropdownByText(By locator, String value) {
+		Select select = new Select(getElementVisibility(locator));
+		select.selectByContainsVisibleText(value);
 	}
 	public void sleepInSecond(int waitTime) {
 		try {
