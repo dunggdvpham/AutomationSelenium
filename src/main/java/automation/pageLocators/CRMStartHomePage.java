@@ -79,9 +79,8 @@ public class CRMStartHomePage extends BaseCommand{
 		return this;
 	}
 	public CRMStartHomePage DeleteResourceWithName(String workAreaName) {
-		String xpath = String.format(btn_Delete, workAreaName);
-		WebElement deleteButton = driver.findElement(By.xpath(xpath));
-		deleteButton.click();
+		By xpath = By.xpath(String.format(btn_Delete, workAreaName));
+		clickOnElement(xpath);
 		return this;
 	}
 	public CRMStartHomePage VerifyNoResultTextDisplay() {
