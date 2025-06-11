@@ -60,7 +60,7 @@ public class BaseCommand {
 	}
 	public List<WebElement> getAllElementVisibility(By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
-		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 		return driver.findElements(locator);
 	}
 	public void verifyAllElementTextContains(By locator, String key) {

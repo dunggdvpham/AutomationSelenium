@@ -42,7 +42,7 @@ public class Day16_BTVN1 extends BaseCommand{
 				.FillFormAndSaveNewWorkArea(workAreaCode, workAreaName)
 				.VerifySuccessToasMessageDisplay()
 				.InputValueToSearchBox(workAreaName)
-				.DeleteResourceWithName(workAreaName)
+				.DeleteAllWorkAreaWithName(workAreaName)
 				.AcceptAlert()
 				.SwitchToDefaultWindow()
 				.VerifyNoResultTextDisplay()

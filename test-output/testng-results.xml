@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-11T16:03:01 ICT" name="Default suite" finished-at="2025-06-11T16:03:12 ICT" duration-ms="11155">
+  <suite started-at="2025-06-11T16:16:14 ICT" name="Default suite" finished-at="2025-06-11T16:16:24 ICT" duration-ms="9328">
     <groups>
     </groups>
-    <test started-at="2025-06-11T16:03:01 ICT" name="Default test" finished-at="2025-06-11T16:03:12 ICT" duration-ms="11155">
+    <test started-at="2025-06-11T16:16:14 ICT" name="Default test" finished-at="2025-06-11T16:16:24 ICT" duration-ms="9328">
       <class name="automation.testsuite.Day16_BTVN1">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:automation.testsuite.Day16_BTVN1@59474f18]" started-at="2025-06-11T16:03:01 ICT" name="openBrowser" finished-at="2025-06-11T16:03:08 ICT" duration-ms="7094" status="PASS">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:automation.testsuite.Day16_BTVN1@59474f18]" started-at="2025-06-11T16:16:14 ICT" name="openBrowser" finished-at="2025-06-11T16:16:20 ICT" duration-ms="5619" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="AddNewAndDeleteWorkAreaSuccessFully()[pri:0, instance:automation.testsuite.Day16_BTVN1@59474f18]" started-at="2025-06-11T16:03:08 ICT" name="AddNewAndDeleteWorkAreaSuccessFully" finished-at="2025-06-11T16:03:11 ICT" duration-ms="2978" status="PASS">
+        <test-method signature="AddNewAndDeleteWorkAreaSuccessFully()[pri:0, instance:automation.testsuite.Day16_BTVN1@59474f18]" started-at="2025-06-11T16:16:20 ICT" name="AddNewAndDeleteWorkAreaSuccessFully" finished-at="2025-06-11T16:16:23 ICT" duration-ms="2721" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddNewAndDeleteWorkAreaSuccessFully -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:automation.testsuite.Day16_BTVN1@59474f18]" started-at="2025-06-11T16:03:11 ICT" name="quitBrowser" finished-at="2025-06-11T16:03:12 ICT" duration-ms="1038" status="PASS">
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:automation.testsuite.Day16_BTVN1@59474f18]" started-at="2025-06-11T16:16:23 ICT" name="quitBrowser" finished-at="2025-06-11T16:16:24 ICT" duration-ms="949" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
