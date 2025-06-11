@@ -181,7 +181,8 @@ public class BaseCommand {
 		wait.until(ExpectedConditions.alertIsPresent());
 		driver.switchTo().alert().accept();
 	}
-	public void switchToDefaultWindown() {
+	public void switchToDefaultWindow() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
 		driver.switchTo().defaultContent();
 	}
     public int getRandomNumber(int length) {

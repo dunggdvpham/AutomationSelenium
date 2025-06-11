@@ -97,7 +97,7 @@ public class CRMStartHomePage extends BaseCommand{
 		return this;
 	}
 	public CRMStartHomePage SwitchToDefaultWindow() {
-		switchToDefaultWindown();
+		switchToDefaultWindow();
 		return this;
 	}
 }
