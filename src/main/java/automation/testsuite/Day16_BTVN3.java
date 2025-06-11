@@ -18,10 +18,10 @@ public class Day16_BTVN3 extends BaseCommand{
 		driver= initChromeDriver(CT_PageURL.DEMOGURU_CUSTOMER);
 		
 	}
-//	@AfterMethod
-//	public void quitBrowser() {
-//		driver.quit();
-//	}
+	@AfterMethod
+	public void quitBrowser() {
+		driver.quit();
+	}
 	@Test
 	public void VerifyAlertDisplay() {
 		DemoGuruCustomerPage home = new DemoGuruCustomerPage(driver)
