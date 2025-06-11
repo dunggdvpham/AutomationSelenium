@@ -19,7 +19,7 @@ public class AladaUserProfilePage extends BaseCommand{
 		sendKeyToElemet(CT_AladaUserProfile.TF_CONFIRM_PASS, Type.Id, newPass);
 		clickOnElement(CT_AladaUserProfile.BTN_SAVE_NEW_PASS, Type.Xpath);
 		sleepInSecond(2);
-		acceptAlert();
+		acceptToAlert();;
 		return this;
 	}
 }

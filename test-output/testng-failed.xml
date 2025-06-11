@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.Day16_BTVN1">
+      <class name="automation.testsuite.Day16_BTVN3">
         <methods>
           <include name="openBrowser"/>
-          <include name="AddNewAndDeleteWorkAreaSuccessFully"/>
+          <include name="VerifyAlertDisplay"/>
         </methods>
-      </class> <!-- automation.testsuite.Day16_BTVN1 -->
+      </class> <!-- automation.testsuite.Day16_BTVN3 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
