@@ -60,7 +60,7 @@ public class BaseCommand {
 	}
 	public List<WebElement> getAllElementVisibility(By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
-		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 		return driver.findElements(locator);
 	}
 	public void verifyAllElementTextContains(By locator, String key) {
@@ -82,6 +82,7 @@ public class BaseCommand {
 	public void isElementDisplayed(String locator, String type) {
 		assertTrue(getElementVisibility(locator, type).isDisplayed());
 	}
+	
 	public boolean isElementDisplayed(By locator) {
 		return getElementVisibility(locator).isDisplayed();
 	}
@@ -141,17 +142,21 @@ public class BaseCommand {
 		assertTrue(element.isDisplayed());		
 	}
 	public Alert swithToAlert() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+		wait.until(ExpectedConditions.alertIsPresent());
 		Alert alert = driver.switchTo().alert();
 		return alert;
 	}
 	public void swithToDefaultWindown() {
 		driver.switchTo().defaultContent();
 	}
-	public void acceptAlert() {
-		Alert alert = swithToAlert();
-		alert.accept();
-		swithToDefaultWindown();
-	}
+//	public void acceptAlert() {
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+//		wait.until(ExpectedConditions.alertIsPresent());
+//		Alert alert = swithToAlert();
+//		alert.accept();
+//		swithToDefaultWindown();
+//	}
 	public void clickToCheckbox(String locator, String type) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
 		WebElement element = getElementVisibility(locator, type);
@@ -162,12 +167,22 @@ public class BaseCommand {
 		
 	}
 	public void switchToAlert() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+		wait.until(ExpectedConditions.alertIsPresent());
 		driver.switchTo().alert();
+	}	
+	public String getTextFromAlert() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+		wait.until(ExpectedConditions.alertIsPresent());
+		return driver.switchTo().alert().getText();
 	}
 	public void acceptToAlert() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
+		wait.until(ExpectedConditions.alertIsPresent());
 		driver.switchTo().alert().accept();
 	}
-	public void switchToDefaultWindown() {
+	public void switchToDefaultWindow() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
 		driver.switchTo().defaultContent();
 	}
     public int getRandomNumber(int length) {

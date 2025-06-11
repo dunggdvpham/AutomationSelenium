@@ -63,6 +63,7 @@ public class CRMStartHomePage extends BaseCommand{
 		clickOnElement(btn_Search);
 		return this;
 	}
+
 	public CRMStartHomePage AccessWorkAreaManagement() {
 		clickOnElement(lnk_WorkAreaManage);
 		return this;
@@ -78,10 +79,13 @@ public class CRMStartHomePage extends BaseCommand{
 		isElementDisplayed(ele_lbl_SuccessToastMessage);
 		return this;
 	}
-	public CRMStartHomePage DeleteResourceWithName(String workAreaName) {
-		String xpath = String.format(btn_Delete, workAreaName);
-		WebElement deleteButton = driver.findElement(By.xpath(xpath));
-		deleteButton.click();
+	public CRMStartHomePage DeleteAllWorkAreaWithName(String workAreaName) {
+		By elementXpath = By.xpath(String.format(ele_WorkArea, workAreaName));
+		By btnDeleteXpath = By.xpath(String.format(btn_Delete, workAreaName));
+		List<WebElement> workareas = getAllElementVisibility(elementXpath);
+		for (WebElement item : workareas) {
+			clickOnElement(btnDeleteXpath);
+		}
 		return this;
 	}
 	public CRMStartHomePage VerifyNoResultTextDisplay() {
@@ -93,7 +97,7 @@ public class CRMStartHomePage extends BaseCommand{
 		return this;
 	}
 	public CRMStartHomePage SwitchToDefaultWindow() {
-		switchToDefaultWindown();
+		switchToDefaultWindow();
 		return this;
 	}
 }
