@@ -166,6 +166,19 @@ public class BaseCommand {
 		}
 		
 	}
+	public void switchToIframeByIndex(int index) {
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        driver.switchTo().defaultContent();
+	        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(index));
+	        System.out.print("iframe");
+    }
+	public void switchToIframeByXpath(By locator) {
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        driver.switchTo().defaultContent();
+	        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
+	        System.out.print("iframe");
+  }
+
 	public void switchToAlert() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(shortWait));
 		wait.until(ExpectedConditions.alertIsPresent());

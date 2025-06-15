@@ -13,5 +13,7 @@ public class CT_PageURL {
 	public static final String DEMO_AUTOMATION = "https://demo.automationtesting.in/Alerts.html";
 	public static final String SELENIUM_PRACTICE = "http://seleniumpractise.blogspot.com/2019/01/alert-demo.html ";
 	public static final String DEMOGURU_CUSTOMER = "https://demo.guru99.com/test/delete_customer.php";
+	public static final String MEDIA_MART = "https://mediamart.vn/";
+
 
 }
